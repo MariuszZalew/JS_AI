@@ -1,0 +1,20 @@
+{
+  "name": "js_ai",
+  "version": "1.0.0",
+  "description": "I'm building a js app with AI",
+  "main": "index.js",
+  "scripts": {
+    "prettier": "npx prettier --write src/**",
+    "tailwind": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "8.56.0",
+    "eslint-config-prettier": "9.1.0",
+    "prettier": "^3.1.1",
+    "prettier-plugin-tailwindcss": "^0.5.9",
+    "tailwindcss": "^3.3.6"
+  }
+}

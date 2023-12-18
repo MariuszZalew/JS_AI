@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Base Template</title>
+    <link rel="stylesheet" href="../dist/output.css" />
+  </head>
+  <body class="bg-black text-center">
+    <h1 class="font-serif text-white">Hello There!</h1>
+    <!-- l2 44 -->
+    <div>
+      <canvas
+        id="myCanvas"
+        class="m-auto my-10 bg-green-500"
+        width="600"
+        height="600"
+      ></canvas>
+    </div>
+    <script src="./math/graph.js" type="module"></script>
+    <script src="./primitives/point.js" type="module"></script>
+    <script src="./primitives//segment.js" type="module"></script>
+    <script type="module">
+      import Point from './primitives/point.js'
+      import Segment from './primitives/segment.js'
+      import Graph from './math/graph.js'
+
+      const canvasMyOwn = document.querySelector('#myCanvas')
+
+      if (canvasMyOwn.getContext) {
+        const ctx = canvasMyOwn.getContext('2d')
+        console.log(ctx, 'ctx is logged')
+        const p1 = new Point(200, 200)
+        const p2 = new Point(300, 100)
+        const p3 = new Point(100, 500)
+        const p4 = new Point(400, 300)
+
+        const s1 = new Segment(p1, p2)
+        const s2 = new Segment(p1, p3)
+        const s3 = new Segment(p1, p4)
+
+        const graph = new Graph([p1, p2, p3, p4], [s1, s2, s3])
+        graph.draw(ctx)
+      } else {
+        alert('Sorry, your browser does not support the canvas element.')
+      }
+    </script>
+  </body>
+</html>
