@@ -1,0 +1,17 @@
+{
+  "name": "js_ai",
+  "version": "1.0.0",
+  "description": "I'm building a js app with AI",
+  "main": "index.js",
+  "scripts": {
+    "prettier": "npx prettier --write src/**"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "8.56.0",
+    "eslint-config-prettier": "9.1.0",
+    "prettier": "3.1.1"
+  }
+}
