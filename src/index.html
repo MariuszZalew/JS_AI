@@ -47,14 +47,17 @@
       graph.draw(ctx)
 
       function addRandomPoint() {
-        graph.addPoint(
+        const success = graph.tryAddPoint(
           new Point(
+            // 0.5 * canvasMyOwn.width,
+            // 0.5 * canvasMyOwn.height
             Math.random() * canvasMyOwn.width,
             Math.random() * canvasMyOwn.height
           )
         )
         ctx.clearRect(0, 0, canvasMyOwn.width, canvasMyOwn.height)
         graph.draw(ctx)
+        console.log(success)
       }
 
       const btn_create = document.querySelector('#controls')
