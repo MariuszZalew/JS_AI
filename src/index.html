@@ -17,7 +17,8 @@
         height="600"
       ></canvas>
       <div id="controls" class="text-white">
-        <button>Add point</button>
+        <button id="control1">Add point</button>
+        <button id="control2">Add segment</button>
       </div>
     </div>
 
@@ -46,6 +47,17 @@
       const graph = new Graph([p1, p2, p3, p4], [s1, s2, s3])
       graph.draw(ctx)
 
+      function addRandSegment() {
+        const index1 = Math.floor(Math.random() * graph.points.length)
+        const index2 = Math.floor(Math.random() * graph.points.length)
+        const success = graph.tryAddSegment(
+          new Segment(graph.points[index1], graph.points[index2])
+        )
+        ctx.clearRect(0, 0, canvasMyOwn.width, canvasMyOwn.height)
+        graph.draw(ctx)
+        console.log(success)
+      }
+
       function addRandomPoint() {
         const success = graph.tryAddPoint(
           new Point(
@@ -60,8 +72,10 @@
         console.log(success)
       }
 
-      const btn_create = document.querySelector('#controls')
+      const btn_create = document.querySelector('#control1')
       btn_create.addEventListener('click', () => addRandomPoint())
+      const btn_seg = document.getElementById('control2')
+      btn_seg.addEventListener('click', () => addRandSegment())
     </script>
   </body>
 </html>
